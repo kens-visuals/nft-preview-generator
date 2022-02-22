@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { colors } from '../styleVariables';
 
 const Wrapper = styled.div`
-  width: 90%;
   background-color: ${colors['tertiary']};
   border-radius: 1rem;
   padding: 2rem;
@@ -21,8 +20,7 @@ const ImagesWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
 `;
 
 export { Wrapper, SecondaryHeading, ImagesWrapper };

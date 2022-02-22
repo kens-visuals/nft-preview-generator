@@ -9,10 +9,10 @@ import {
 export default function UploadContainer() {
   return (
     <Wrapper>
-      <SecondaryHeading>Upload Image</SecondaryHeading>
+      <SecondaryHeading>Upload Images</SecondaryHeading>
       <ImagesWrapper>
         <ImageUploader text={'Click or Drag  NFT Image Here'} />
-        <ImageUploader text={'Click or Drag  Creator’s Image Here'} />
+        <ImageUploader user text={'Click or Drag  Creator’s Image Here'} />
       </ImagesWrapper>
     </Wrapper>
   );

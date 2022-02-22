@@ -8,7 +8,7 @@ import './App.css';
 
 const Title = styled.h1`
   color: ${colors['secondary--dark']};
-  font-size: 3.4rem;
+  font-size: 3.2rem;
   text-align: center;
   margin-block: 2rem;
 `;
@@ -18,6 +18,7 @@ const Container = styled.div`
   max-width: 90rem;
   background-color: ${colors['primary--dark']};
   border-radius: 1rem;
+  padding: 0 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;

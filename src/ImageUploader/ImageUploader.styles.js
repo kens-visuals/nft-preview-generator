@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import { colors } from '../styleVariables';
 
 const ImageContainer = styled.div`
-  width: 15rem;
-  height: 15rem;
+  width: 13rem;
+  height: 13rem;
   color: ${colors['secondary--light']};
   background-color: ${colors['primary--dark']};
-  border-radius: 1rem;
-  margin: 2rem 0;
-  padding: 5rem 2rem;
+  border-radius: ${(props) => (props.user ? '50%' : '1rem')};
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  margin: 2rem 0 4rem 0;
+  padding: 0 2rem;
   position: relative;
   z-index: 10;
   display: flex;
@@ -20,7 +21,6 @@ const ImageContainer = styled.div`
 
 const ImagePreview = styled.div`
   height: 100%;
-  border-radius: 1rem;
   position: absolute;
   inset: 0;
   z-index: -1;
@@ -29,9 +29,8 @@ const ImagePreview = styled.div`
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  border-radius: 1rem;
+  border-radius: ${(props) => (props.user ? '50%' : '1rem')};
   object-fit: cover;
-  opacity: 0.5;
 `;
 
 const Button = styled.button`
@@ -44,6 +43,13 @@ const Button = styled.button`
   font-weight: 700;
   padding: 1rem 2rem;
   margin-top: 0.5rem;
+  transition: all 0.3s;
+
+  &:hover {
+    color: ${colors['secondary--light']};
+    background-color: ${colors['red']};
+    cursor: pointer;
+  }
 `;
 
 export { ImageContainer, ImagePreview, Image, Button };

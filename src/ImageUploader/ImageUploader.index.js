@@ -8,15 +8,13 @@ import {
   Image,
   Button,
 } from './ImageUploader.styles';
+
 import { colors } from '../styleVariables';
 
 export default function ImageUploader(props) {
   const [images, setImages] = useState([]);
 
-  const onChange = (imageList, addUpdateIndex) => {
-    console.log(imageList, addUpdateIndex); // DEL
-    setImages(imageList);
-  };
+  const onChange = (imageList, addUpdateIndex) => setImages(imageList);
 
   return (
     <div>
@@ -36,16 +34,29 @@ export default function ImageUploader(props) {
         }) => (
           <div>
             <ImageContainer
-              style={isDragging ? { color: colors['red'] } : undefined}
+              user={props.user}
               onClick={onImageUpload}
               {...dragProps}
             >
-              <span>{props.text}</span>
+              <span style={isDragging ? { color: colors['cyan'] } : null}>
+                {imageList.length < 1 && props.text}
+              </span>
 
               {imageList.map((image, index) => (
                 <ImagePreview key={index}>
-                  <Image src={image['data_url']} alt="preview" />
-                  <Button onClick={() => onImageRemove(index)}>Remove</Button>
+                  <Image
+                    user={props.user}
+                    src={image['data_url']}
+                    alt="preview"
+                  />
+                  <Button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onImageRemove(index);
+                    }}
+                  >
+                    Remove
+                  </Button>
                 </ImagePreview>
               ))}
             </ImageContainer>
