@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import styled from 'styled-components';
+
+import { colors } from './styleVariables';
+
+import UploadContainer from './UploadContainer/UploadContainer.index';
+
 import './App.css';
+
+const Title = styled.h1`
+  color: ${colors['secondary--dark']};
+  font-size: 3.4rem;
+  text-align: center;
+  margin-block: 2rem;
+`;
+
+const Container = styled.div`
+  width: 90%;
+  max-width: 90rem;
+  background-color: ${colors['primary--dark']};
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <Title>NFT Preview Generator</Title>
+        <UploadContainer />
+      </Container>
     </div>
   );
 }
