@@ -1,9 +1,9 @@
 import ImageUploader from '../ImageUploader/ImageUploader.index';
 
 import {
-  Wrapper,
-  SecondaryHeading,
-  ImagesWrapper,
+  UploadWrapper,
+  UploadHeading,
+  UploadImagesWrapper,
 } from './UploadContainer.styles';
 
 export default function UploadContainer({
@@ -13,21 +13,21 @@ export default function UploadContainer({
   onUserChange,
 }) {
   return (
-    <Wrapper>
-      <SecondaryHeading>Upload Images</SecondaryHeading>
-      <ImagesWrapper>
+    <UploadWrapper>
+      <UploadHeading>Upload Images</UploadHeading>
+      <UploadImagesWrapper>
         <ImageUploader
-          onNftChange={onNftChange}
           nftImage={nftImage}
+          onNftChange={onNftChange}
           text={'Click or Drag NFT Image Here'}
         />
         <ImageUploader
-          onUserChange={onUserChange}
-          userImage={userImage}
           user
+          userImage={userImage}
+          onUserChange={onUserChange}
           text={'Click or Drag Creator’s Image Here'}
         />
-      </ImagesWrapper>
-    </Wrapper>
+      </UploadImagesWrapper>
+    </UploadWrapper>
   );
 }

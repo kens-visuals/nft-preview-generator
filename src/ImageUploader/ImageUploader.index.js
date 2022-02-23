@@ -4,10 +4,10 @@ import ImageUploading from 'react-images-uploading';
 import {
   ImageContainer,
   ImagePreview,
+  OverlaySpan,
   Image,
-  Button,
+  RemoveButton,
 } from './ImageUploader.styles';
-import { colors } from '../styleVariables';
 
 export default function ImageUploader({
   user,
@@ -21,10 +21,10 @@ export default function ImageUploader({
     <div>
       <ImageUploading
         maxNumber={1}
-        value={nftImage || userImage}
         multiple={false}
-        onChange={onNftChange || onUserChange}
         dataURLKey="data_url"
+        value={nftImage || userImage}
+        onChange={onNftChange || onUserChange}
       >
         {({
           imageList,
@@ -34,21 +34,21 @@ export default function ImageUploader({
           dragProps,
         }) => (
           <ImageContainer user={user} onClick={onImageUpload} {...dragProps}>
-            <span style={isDragging ? { color: colors['cyan'] } : null}>
+            <OverlaySpan isDragging={isDragging}>
               {imageList.length < 1 && text}
-            </span>
+            </OverlaySpan>
 
             {imageList.map((image, index) => (
               <ImagePreview key={index}>
                 <Image user={user} src={image['data_url']} alt="preview" />
-                <Button
+                <RemoveButton
                   onClick={(e) => {
                     e.stopPropagation();
                     onImageRemove(index);
                   }}
                 >
                   Remove
-                </Button>
+                </RemoveButton>
               </ImagePreview>
             ))}
           </ImageContainer>

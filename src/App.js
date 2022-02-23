@@ -10,7 +10,7 @@ import './App.css';
 import { colors } from './styleVariables';
 
 const Title = styled.h1`
-  color: ${colors['secondary--dark']};
+  color: ${colors.secondaryDark};
   font-size: 3.2rem;
   text-align: center;
   margin-block: 2rem;
@@ -19,9 +19,9 @@ const Title = styled.h1`
 const Container = styled.div`
   width: 90%;
   max-width: 90rem;
-  background-color: ${colors['primary--dark']};
+  background-color: ${colors.primaryDark};
   border-radius: 1rem;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: center;

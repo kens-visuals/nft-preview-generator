@@ -4,7 +4,7 @@ import ImageUploading from 'react-images-uploading';
 import {
   CardBox,
   CardImg,
-  CardImgContainer,
+  CardNftContainer,
   CardUserWrapper,
   CardUserImgContainer,
   CardUserImg,
@@ -28,18 +28,18 @@ export default function Card({
           onChange={onNftChange}
           dataURLKey="data_url"
         >
-          {({ imageList }) => {
-            return imageList.map((image, index) => (
-              <CardImgContainer key={index}>
+          {({ imageList }) =>
+            imageList.map((image, index) => (
+              <CardNftContainer key={index}>
                 <CardImg src={image.data_url} alt="nft preview" />
-              </CardImgContainer>
-            ));
-          }}
+              </CardNftContainer>
+            ))
+          }
         </ImageUploading>
       ) : (
-        <CardImgContainer>
+        <CardNftContainer>
           <CardImg src={nftPlaceholder} alt="nft preview" />
-        </CardImgContainer>
+        </CardNftContainer>
       )}
 
       <CardUserWrapper>
@@ -49,13 +49,13 @@ export default function Card({
             onChange={onUserChange}
             dataURLKey="data_url"
           >
-            {({ imageList }) => {
-              return imageList.map((image, index) => (
+            {({ imageList }) =>
+              imageList.map((image, index) => (
                 <CardUserImgContainer key={index} className="image-item">
                   <CardUserImg src={image.data_url} alt="user preview" />
                 </CardUserImgContainer>
-              ));
-            }}
+              ))
+            }
           </ImageUploading>
         ) : (
           <CardUserImgContainer>
