@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
-import { colors } from './styleVariables';
-
+// components
 import UploadContainer from './UploadContainer/UploadContainer.index';
+import Card from './Card/Card.index';
 
+// styles
 import './App.css';
+import { colors } from './styleVariables';
 
 const Title = styled.h1`
   color: ${colors['secondary--dark']};
@@ -26,11 +29,27 @@ const Container = styled.div`
 `;
 
 function App() {
+  const [nftImage, setNftImage] = useState([]);
+  const [userImage, setUserImage] = useState([]);
+
+  const onNftChange = (imageList) => setNftImage(imageList);
+  const onUserChange = (imageList) => setUserImage(imageList);
+
+  const previewProps = { nftImage, onNftChange, userImage, onUserChange };
+
   return (
     <div className="App">
       <Container>
         <Title>NFT Preview Generator</Title>
-        <UploadContainer />
+
+        <UploadContainer
+          onNftChange={onNftChange}
+          nftImage={nftImage}
+          onUserChange={onUserChange}
+          userImage={userImage}
+        />
+
+        <Card {...previewProps} />
       </Container>
     </div>
   );

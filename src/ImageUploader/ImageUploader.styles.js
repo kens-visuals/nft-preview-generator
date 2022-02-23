@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { colors } from '../styleVariables';
 
 const ImageContainer = styled.div`
-  width: 13rem;
-  height: 13rem;
+  width: 11rem;
+  height: 11rem;
   color: ${colors['secondary--light']};
   background-color: ${colors['primary--dark']};
   border-radius: ${(props) => (props.user ? '50%' : '1rem')};
