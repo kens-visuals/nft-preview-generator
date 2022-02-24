@@ -1,4 +1,4 @@
-import ImageUploader from '../ImageUploader/ImageUploader.index';
+import ImageUploader from 'ImageUploader/ImageUploader.index';
 
 import {
   UploadWrapper,

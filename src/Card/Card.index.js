@@ -11,8 +11,8 @@ import {
 } from './Card.styles';
 
 // assests
-import nftPlaceholder from '../images/image-equilibrium.jpg';
-import userPlaceholder from '../images/image-avatar.png';
+import nftPlaceholder from 'images/image-equilibrium.jpg';
+import userPlaceholder from 'images/image-avatar.png';
 
 export default function Card({
   nftImage,

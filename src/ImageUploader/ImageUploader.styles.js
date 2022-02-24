@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors } from '../styleVariables';
+import { colors } from 'styleVariables';
 
 export const ImageContainer = styled.div`
   width: 11rem;
@@ -55,5 +55,3 @@ export const RemoveButton = styled.button`
     cursor: pointer;
   }
 `;
-
-//  { ImageContainer, ImagePreview, Image, RemoveButton, OverlaySpan };

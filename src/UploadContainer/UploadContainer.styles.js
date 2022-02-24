@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors } from '../styleVariables';
+import { colors } from 'styleVariables';
 
 export const UploadWrapper = styled.div`
   width: 100%;
