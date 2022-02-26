@@ -71,7 +71,8 @@ export default function Card({
           </C.UserImgContainer>
         )}
         <C.UserName>
-          <C.UserNameSpan>Creation of</C.UserNameSpan> James
+          <C.UserNameSpan>Creation of </C.UserNameSpan>{' '}
+          {values.creatorName || ' Your Name'}
         </C.UserName>
       </C.UserWrapper>
     </C.Box>
