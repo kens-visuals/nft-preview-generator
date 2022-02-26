@@ -1,5 +1,8 @@
+// components
 import ImageUploader from 'ImageUploader/ImageUploader.index';
+import InputContainer from 'InputContainer/InputContainer.index';
 
+// styles
 import {
   UploadWrapper,
   UploadHeading,
@@ -11,10 +14,12 @@ export default function UploadContainer({
   onNftChange,
   userImage,
   onUserChange,
+  handleChange,
+  values,
 }) {
   return (
     <UploadWrapper>
-      <UploadHeading>Upload Images</UploadHeading>
+      <UploadHeading>Insert information</UploadHeading>
       <UploadImagesWrapper>
         <ImageUploader
           nftImage={nftImage}
@@ -28,6 +33,8 @@ export default function UploadContainer({
           text={'Click or Drag Creator’s Image Here'}
         />
       </UploadImagesWrapper>
+
+      <InputContainer values={values} handleChange={handleChange} />
     </UploadWrapper>
   );
 }

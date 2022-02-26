@@ -1,5 +1,6 @@
 // components
-import Container from 'Container/Container.index';
+import Main from 'Main/Main.index';
+import Footer from 'Footer/Footer.index';
 
 // styles
 import './App.css';
@@ -7,7 +8,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Container />
+      <Main />
+      <Footer />
     </div>
   );
 }
