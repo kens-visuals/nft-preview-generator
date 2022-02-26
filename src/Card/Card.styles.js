@@ -9,6 +9,10 @@ export const Box = styled.div`
   border-radius: 1rem;
   margin-top: 2rem;
   padding: 2rem;
+
+  @media (min-width: 810px) {
+    margin-top: 0;
+  }
 `;
 
 export const NftContainer = styled.div`
@@ -43,12 +47,13 @@ export const UserImg = styled(Img)`
 `;
 
 export const UserName = styled.span`
-  color: ${colors.secondaryLight};
+  color: ${colors.secondaryDark};
   font-size: 1.4rem;
 `;
 
 export const UserNameSpan = styled.span`
-  color: ${colors.secondaryDark};
+  color: ${colors.secondaryLight};
+  margin-left: 0.5rem;
 `;
 
 export const InfoWrapper = styled.div`

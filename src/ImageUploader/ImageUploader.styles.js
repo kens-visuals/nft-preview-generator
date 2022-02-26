@@ -8,7 +8,7 @@ export const ImageContainer = styled.div`
   color: ${colors.secondaryLight};
   background-color: ${colors.primaryDark};
   border-radius: ${(props) => (props.user ? '50%' : '1rem')};
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-size: 1.2rem;
   margin: 2rem 0 4rem 0;
   padding: 0 2rem;
   position: relative;
@@ -43,7 +43,7 @@ export const RemoveButton = styled.button`
   background-color: transparent;
   border: 0.15rem solid ${colors.red};
   border-radius: 1rem;
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
   font-weight: 700;
   padding: 1rem 2rem;
   margin-top: 0.5rem;

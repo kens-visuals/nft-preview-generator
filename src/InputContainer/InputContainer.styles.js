@@ -16,9 +16,17 @@ export const Download = styled.button`
   width: 100%;
   color: ${colors.primary};
   background-color: ${colors.cyan};
-  border: none;
+  border: 0.1rem solid transparent;
   border-radius: 0.5rem;
   font-weight: 900;
   margin-top: 1.5rem;
   padding: 1rem;
+  transition: all 0.3s;
+
+  &:hover {
+    color: ${colors.secondary};
+    background-color: transparent;
+    border: 0.1rem solid ${colors.cyan};
+    cursor: pointer;
+  }
 `;

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { colors } from 'styleVariables';
 
 export const Label = styled.label`
-  font-size: 1.8rem;
   color: ${colors.secondaryDark};
   margin-bottom: 0.5rem;
   display: inline-block;
