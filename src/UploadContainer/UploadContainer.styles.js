@@ -4,13 +4,14 @@ import { colors } from 'styleVariables';
 
 export const UploadWrapper = styled.div`
   width: 100%;
-  max-width: 50rem;
+  max-width: 30rem;
   background-color: ${colors.tertiary};
   border-radius: 1rem;
   padding: 2rem;
   text-align: center;
 
   @media (min-width: 810px) {
+    max-width: 50rem;
     padding: 3rem;
   }
 `;

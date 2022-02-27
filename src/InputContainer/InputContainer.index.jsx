@@ -1,10 +1,16 @@
+import { useState } from 'react';
+
 // components
 import Input from 'Input/Input.index';
 
 // styles
 import { InputWrapper, Download } from './InputContainer.styles';
 
-export default function InputContainer({ handleChange, values }) {
+export default function InputContainer({
+  handleChange,
+  values,
+  exportAsPicture,
+}) {
   return (
     <InputWrapper>
       <Input
@@ -35,7 +41,7 @@ export default function InputContainer({ handleChange, values }) {
         value={values.name}
         onChange={(e) => handleChange(e.target.name, e.target.value)}
       />
-      <Download>Download</Download>
+      <Download onClick={exportAsPicture}>Download</Download>
     </InputWrapper>
   );
 }

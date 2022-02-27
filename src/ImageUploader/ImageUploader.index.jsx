@@ -40,7 +40,11 @@ export default function ImageUploader({
 
             {imageList.map((image, index) => (
               <ImagePreview key={index}>
-                <Image user={user} src={image['data_url']} alt="preview" />
+                <Image
+                  user={user}
+                  style={{ backgroundImage: `url(${image['data_url']})` }}
+                />
+                {/* src={image['data_url']}  alt="preview"*/}
                 <RemoveButton
                   onClick={(e) => {
                     e.stopPropagation();

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import FileSaver from 'file-saver';
+import html2canvas from 'html2canvas';
 
 // components
 import UploadContainer from 'UploadContainer/UploadContainer.index';
@@ -17,12 +19,22 @@ export default function Container() {
     creatorName: '',
   });
 
-  function handleChange(name, value) {
-    setValues({ ...values, [name]: value });
-  }
+  const handleChange = (name, value) => setValues({ ...values, [name]: value });
 
   const onNftChange = (imageList) => setNftImage(imageList);
   const onUserChange = (imageList) => setUserImage(imageList);
+
+  const exportAsPicture = () => {
+    const data = document.getElementById('Card');
+
+    html2canvas(data, {
+      backgroundColor: '#14263d',
+      logging: false,
+    }).then((canvas) => {
+      console.log(canvas);
+      canvas.toBlob((blob) => FileSaver.saveAs(blob, 'nft.png'));
+    });
+  };
 
   const previewProps = { nftImage, onNftChange, userImage, onUserChange };
 
@@ -34,6 +46,7 @@ export default function Container() {
         {...previewProps}
         values={values}
         handleChange={handleChange}
+        exportAsPicture={exportAsPicture}
       />
 
       <Card {...previewProps} values={values} />

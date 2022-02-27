@@ -17,7 +17,11 @@ export const Box = styled.div`
 
 export const NftContainer = styled.div`
   width: 100%;
-  height: 26rem;
+  height: 25rem;
+  max-height: 30rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 export const Img = styled.img`
@@ -36,12 +40,9 @@ export const UserWrapper = styled.div`
   gap: 1rem;
 `;
 
-export const UserImgContainer = styled.div`
+export const UserImgContainer = styled(NftContainer)`
   width: 3.5rem;
-  aspect-ratio: 1;
-`;
-
-export const UserImg = styled(Img)`
+  height: 3.5rem;
   border: 0.1rem solid ${colors.secondaryLight};
   border-radius: 50%;
 `;

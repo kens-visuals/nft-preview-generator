@@ -11,6 +11,7 @@ export const ImageContainer = styled.div`
   font-size: 1.2rem;
   margin: 2rem 0 4rem 0;
   padding: 0 2rem;
+  cursor: pointer;
   position: relative;
   z-index: 10;
   display: flex;
@@ -30,11 +31,13 @@ export const OverlaySpan = styled.span`
   color: ${(props) => (props.isDragging ? colors.cyan : colors.secondaryLight)};
 `;
 
-export const Image = styled.img`
+export const Image = styled.div`
   width: 100%;
   height: 100%;
+  background-size: cover;
+  background-position: center;
   border-radius: ${(props) => (props.user ? '50%' : '1rem')};
-  object-fit: cover;
+  /* object-fit: cover; */
 `;
 
 export const RemoveButton = styled.button`

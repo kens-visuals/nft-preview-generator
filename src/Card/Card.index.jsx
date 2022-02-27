@@ -16,7 +16,7 @@ export default function Card({
   values,
 }) {
   return (
-    <C.Box>
+    <C.Box id="Card">
       {nftImage.length > 0 ? (
         <ImageUploading
           value={nftImage}
@@ -25,16 +25,17 @@ export default function Card({
         >
           {({ imageList }) =>
             imageList.map((image, index) => (
-              <C.NftContainer key={index}>
-                <C.Img src={image.data_url} alt="nft preview" />
-              </C.NftContainer>
+              <C.NftContainer
+                key={index}
+                style={{ backgroundImage: `url(${image.data_url})` }}
+              ></C.NftContainer>
             ))
           }
         </ImageUploading>
       ) : (
-        <C.NftContainer>
-          <C.Img src={nftPlaceholder} alt="nft preview" />
-        </C.NftContainer>
+        <C.NftContainer
+          style={{ backgroundImage: `url(${nftPlaceholder})` }}
+        ></C.NftContainer>
       )}
 
       <C.InfoWrapper>
@@ -59,16 +60,17 @@ export default function Card({
           >
             {({ imageList }) =>
               imageList.map((image, index) => (
-                <C.UserImgContainer key={index} className="image-item">
-                  <C.UserImg src={image.data_url} alt="user preview" />
-                </C.UserImgContainer>
+                <C.UserImgContainer
+                  key={index}
+                  style={{ backgroundImage: `url(${image.data_url})` }}
+                ></C.UserImgContainer>
               ))
             }
           </ImageUploading>
         ) : (
-          <C.UserImgContainer>
-            <C.UserImg src={userPlaceholder} alt="nft preview" />
-          </C.UserImgContainer>
+          <C.UserImgContainer
+            style={{ backgroundImage: `url(${userPlaceholder})` }}
+          ></C.UserImgContainer>
         )}
         <C.UserName>
           Creation of

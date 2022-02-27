@@ -16,6 +16,7 @@ export default function UploadContainer({
   onUserChange,
   handleChange,
   values,
+  exportAsPicture,
 }) {
   return (
     <UploadWrapper>
@@ -34,7 +35,11 @@ export default function UploadContainer({
         />
       </UploadImagesWrapper>
 
-      <InputContainer values={values} handleChange={handleChange} />
+      <InputContainer
+        values={values}
+        handleChange={handleChange}
+        exportAsPicture={exportAsPicture}
+      />
     </UploadWrapper>
   );
 }
