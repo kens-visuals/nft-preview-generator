@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 // components
 import Input from 'Input/Input.index';
 

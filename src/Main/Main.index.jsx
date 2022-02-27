@@ -28,6 +28,7 @@ export default function Container() {
     const data = document.getElementById('Card');
 
     html2canvas(data, {
+      scale: 2,
       backgroundColor: '#14263d',
       logging: false,
     }).then((canvas) => {

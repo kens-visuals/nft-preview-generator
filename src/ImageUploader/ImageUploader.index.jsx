@@ -18,7 +18,7 @@ export default function ImageUploader({
   userImage,
 }) {
   return (
-    <div>
+    <>
       <ImageUploading
         maxNumber={1}
         multiple={false}
@@ -44,7 +44,6 @@ export default function ImageUploader({
                   user={user}
                   style={{ backgroundImage: `url(${image['data_url']})` }}
                 />
-                {/* src={image['data_url']}  alt="preview"*/}
                 <RemoveButton
                   onClick={(e) => {
                     e.stopPropagation();
@@ -58,6 +57,6 @@ export default function ImageUploader({
           </ImageContainer>
         )}
       </ImageUploading>
-    </div>
+    </>
   );
 }
