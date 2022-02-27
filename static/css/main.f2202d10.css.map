@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.f2202d10.css","mappings":"AAAA,KAKE,kBAAmB,CAHnB,YAAa,CACb,2BAA4B,CAC5B,oBAAqB,CAHrB,gBAKF","sources":["App.css"],"sourcesContent":[".App {\n  min-height: 100vh;\n  display: grid;\n  grid-template-rows: 1fr auto;\n  justify-items: center;\n  align-items: center;\n}\n"],"names":[],"sourceRoot":""}
